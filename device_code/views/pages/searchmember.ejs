@@ -1,0 +1,90 @@
+<!-- views/pages/addmember.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <% include ../partials/head %>
+</head>
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    th,
+    td {
+        text-align: center;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #f2f2f2
+    }
+
+    th {
+        text-align: center;
+        background-color: #4CAF50;
+        color: white;
+    }
+</style>
+<% include ../partials/digitalclock %>
+
+    <body class="container" onload="startTime()">
+        <header>
+            <% include ../partials/header %>
+        </header>
+        <main>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="jumbotron">
+                        <form method="post" action="/member">
+                            <table cellpadding="11">
+                                <tr>
+                                    <td>Identification CardNumber</td>
+                                    <td>: <input type="text" name="identificationid"></td>
+                                </tr>
+                                    <td></td>
+                                    <td>
+                                        &nbsp; <input type="submit" name="submit" value="Search By Identification CardNumber" onclick="popup('Search Complete!')">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>
+                        <br><br>
+                        <!-- <form method="post" action="/add">
+                            <table cellpadding="11">
+                                <tr>
+                                    <td>Name</td>
+                                    <td>: <input type="text" name="name"></td>
+                                </tr>
+                                <tr>
+                                    <td>Surname</td>
+                                    <td>: <input type="text" name="surname"></td>
+                                </tr>
+                                    <td></td>
+                                    <td>
+                                    <input type="submit" name="submit" value="Search By FullName" onclick="popup('Search Complete!')">
+                                    </td>
+                                </tr>
+                            </table>
+                        </form>-->
+                        <div>
+                            <p>
+                                <h5>Please! Check Your TagID before you Insert it. Thank You.</h5>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script>
+      function popup(data) {
+        alert(data);
+      }
+    </script>
+        <footer>
+            <% include ../partials/footer %>
+        </footer>
+    </body>
+
+</html>

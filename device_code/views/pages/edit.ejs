@@ -1,0 +1,114 @@
+<!-- views/pages/addmember.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head %>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    text-align: center;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+
+  th {
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+  }
+</style>
+<% include ../partials/digitalclock %>
+
+  <body class="container" onload="startTime()">
+    <header>
+      <% include ../partials/header %>
+    </header>
+    <main>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="jumbotron">
+            <form method="post" action="/edit/<%=data.identificationid%>">
+              <table cellpadding="11">
+                <tr>
+                  <td>Name</td>
+                  <td>: <input type="text" name="name" value="<%=data.name%>" required></td>
+                </tr>
+
+                <tr>
+                  <td>UID</td>
+                  <td>: <input type="text" name="uuid" value="<%=data.uuid%>"></td>
+                </tr>
+                <tr>
+                  <td>LineID</td>
+                  <td>: <input type="text" name="lineid" value="<%=data.lineid%>"></td>
+                </tr>
+                <tr>
+                  <td>Identification CardNumber</td>
+                  <td>: <input type="text" name="identificationid" value="<%=data.identificationid%>" required></td>
+                </tr>
+                <tr>
+                  <tr>
+                    <td>BirthDate</td>
+                    <td>: <input type="text" name="birthdate" value="<%=data.birthdate%>"></td>
+                  </tr>
+                  <tr>
+                    <td valign="top">Address</td>
+                    <td valign="top">: <textarea name="address" cols="30" rows="5"><%=data.address%></textarea></td>
+                  </tr>
+                  <td>Datetime</td>
+                  <td>: <input type="text" name="datetime" value="<%=data.datetime%>" ></td>
+                </tr>
+                <tr>
+                  <td>Department</td>
+                  <td>: <input type="text" name="department" value="<%=data.department%>" ></td>
+                </tr>
+                <tr>
+                  <td>Doctor</td>
+                  <td>: <input type="text" name="doctor" value="<%=data.doctor%>" ></td>
+                </tr>
+                <tr>
+                  <td>Symtoms</td>
+                  <td>: <input type="text" name="symtoms" value="<%=data.symtoms%>" ></td>
+                </tr>
+                <tr>
+                  <td>Solutions</td>
+                  <td>: <input type="text" name="solutions" value="<%=data.solutions%>" ></td>
+                </tr>
+                <tr>
+                  <td>status</td>
+                  <td>: <input type="text" name="status" value="<%=data.status%>" ></td>
+                </tr>
+                <tr>
+                  <td></td>
+                  <td>
+                    &nbsp; <input type="submit" name="submit" value="Save" onclick="popup('save Complete!')">
+                  </td>
+                </tr>
+              </table>
+            </form>
+            <p>Please Check Your Profile Before Add into system</p>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      function popup(data) {
+        alert(data);
+      }
+    </script>
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+  </body>
+
+</html>

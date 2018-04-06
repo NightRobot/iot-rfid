@@ -1,0 +1,34 @@
+{
+  "name": "rfid-iot",
+  "version": "1.0.0",
+  "description": "embedded system",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git"
+  },
+  "dependencies": {
+    "body-parser": "latest",
+    "ejs": "^1.0.0",
+    "express": "3.5.1",
+    "express-myconnection": "1.0.4",
+    "http": "latest",
+    "https": "latest",
+    "request": "latest",
+    "routes": "latest",
+    "connect": "latest",
+    "sqlite3": "latest"
+  },
+  "keywords": [
+    "node.js",
+    "express"
+  ],
+  "engines": {
+    "node": "8.x"
+  },
+  "author": "NightRobot",
+  "license": "ISC"
+}

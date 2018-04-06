@@ -1,0 +1,25 @@
+{
+  "name": "mbed-iot-rfid",
+  "version": "1.0.0",
+  "description": "for mbed",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "keywords": [
+    "node.js",
+    "express"
+  ],
+  "dependencies": {
+    "ejs": "latest",
+    "express": "latest",
+    "thingspeakclient": "latest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NightRobot/mbed-iot-rfid.git"
+  },
+  "author": "NightRobot",
+  "license": "ISC"
+}

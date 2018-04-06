@@ -1,0 +1,28 @@
+<!-- views/pages/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ../partials/head %>
+</head>
+<% include ../partials/digitalclock %>
+<body class="container" onload="startTime()">
+    <header>
+        <% include ../partials/header %>
+    </header>
+    <main>
+        <div class="jumbotron">
+            <h1><font color="#00EE00">Local Time UTC + 7:00 (Thailand)<div style="color:#0000FF" id="txt"></font></h1>
+        <div>
+            <h2>RFID Security</h2>
+
+        </div>
+    </main>
+
+
+    <footer>
+        <% include ../partials/footer %>
+    </footer>
+    
+</body>
+</html>

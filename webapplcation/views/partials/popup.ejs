@@ -1,0 +1,57 @@
+<!-- views/partials/popup.ejs -->
+<style>
+.alert {
+	width: 50%;
+    position: fixed;
+    z-index: 1;
+    background-color: #f44336;
+    color: white;
+    transition: 1s;
+    margin-bottom: 50px;
+    width: 200;
+    font-size: 17px;
+    bottom: 5px;
+}
+
+.closebtn_x {
+    margin-left: 0px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    line-height: 40px;
+    cursor: pointer;
+    font-size: 30px;
+    transition: 0.3s;
+}
+
+.closebtn_x:hover {
+    color: black;
+}
+</style>
+
+
+<div id="popup" class="alert">
+  <span class="closebtn_x" onclick="closeNav_x()">&times;</span>
+  <p><strong>New Card!!</strong></p>
+  <p id="fullname_info"></p>
+  <p id="RFID_info"></p>
+</div>
+<script>
+popupalert();
+function popupalert() {
+	// var name = "nawapon" ;
+    // var surname = "jeanpanichpong" ;
+	var rfidnumber = "XXYYZZ123" ;
+    // document.getElementById("fullname_info").innerHTML = "Fullname: "+name+" "+surname;
+    document.getElementById("RFID_info").innerHTML = "RFID Number: "+rfidnumber ;
+    setInterval(closeNav_x, 5000);
+}
+function closeNav_x() {
+   	document.getElementById("popup").style.width = "0";
+    setInterval(myTimer, 250);
+}
+function myTimer(){
+	document.getElementById("popup").style.display = 'none';
+}
+</script>
+

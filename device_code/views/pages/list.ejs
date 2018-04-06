@@ -1,0 +1,101 @@
+<!-- views/pages/addmember.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <% include ../partials/head %>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th,
+  td {
+    text-align: center;
+    padding: 8px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2
+  }
+
+  th {
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+  }
+</style>
+<% include ../partials/digitalclock %>
+
+  <body class="container" onload="startTime()">
+    <header>
+      <% include ../partials/header %>
+    </header>
+    <main>
+      <div class="row">
+        <div class="col-sm-12">
+          <div class="jumbotron">
+            <div class="data-table">
+               <table border="1" cellpadding="7" cellspacing="7">
+                   <tr>
+                       <th width="50px">No</th>
+                       <th>Name</th>
+                       <th>uuid</th>
+                       <th>lineid</th>
+                       <th>identificationid</th>
+                       <th>birthdate</th>
+                       <th>address</th>
+
+                       <th width="120px">Action</th>
+                   </tr>
+                   <!-- db.run("CREATE TABLE patient (name TEXT, uuid TEXT,lineid TEXT ,identificationid TEXT,birthdate TEXT,address TEXT,datetime TEXT,department TEXT,doctor TEXT,symtoms TEXT,solutions TEXT,status TEXT)");-->
+
+                   <% if(data.length){
+
+                    for(var i = 0;i < data.length;i++) { %>
+
+                   <tr>
+                       <td><%=(i+1)%></td>
+                       <td><%=data[i].name%></td>
+                       <td><%=data[i].uuid%></td>
+                       <td><%=data[i].lineid%></td>
+                       <td><%=data[i].identificationid%></td>
+                       <td><%=data[i].birthdate%></td>
+                       <td><%=data[i].address%></td>
+
+                       <td>
+                           <a class="a-inside edit" href="../edit/<%=data[i].identificationid%>">Edit</a>
+
+                           <a class="a-inside delete" href="../delete/<%=data[i].identificationid%>">Delete</a>
+
+                       </td>
+                   </tr>
+               <% }
+
+                }else{ %>
+                    <tr>
+                       <td colspan="3">No user</td>
+                    </tr>
+               <% } %>
+
+
+
+               </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script>
+      function popup(data) {
+        alert(data);
+      }
+    </script>
+    <footer>
+      <% include ../partials/footer %>
+    </footer>
+  </body>
+
+</html>

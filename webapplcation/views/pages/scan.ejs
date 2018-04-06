@@ -1,0 +1,54 @@
+<% include ../partials/head %>
+<% include ../partials/menu %>
+<% include ../partials/tabs %>
+<% include ../partials/accordion %>
+<% include ../partials/button %>
+<% include ../partials/popup %>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#"><span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776; Menu</span></a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="dropdown">
+                <li><a href="/">Home</a></li>
+                <li><a >Sign In</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div><center>
+    <h3>Scan RFID Card</h3>
+    <input type="search" id="mySearch" placeholder="Search your RFID">
+    <button onclick="searcehRFID()">Search</button>
+    <p id="demo"></p>
+</div></center>
+
+<script>
+function searcehRFID() {
+    var x = document.getElementById("mySearch").placeholder;
+    document.getElementById("demo").innerHTML = x;
+}
+</script>
+<style >
+div.menu_button {
+    position: fixed;
+    bottom: 15px;
+    right: 0px;
+    width: 90px;
+}
+</style>
+
+<div class="menu_button">
+    <a href="/"><button class="button" ><p>Back</p></button></a>
+    <a href="/scan"><button class="button" ><p>Reset</p></button></a>
+</div>
+<% include ../partials/footer %>
